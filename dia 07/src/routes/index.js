@@ -1,5 +1,6 @@
 
 const { status } = require('../api/controllers/app.controller')
+const authcontroller = require('../api/controllers/auth.controller')
 
 const root = {
     method: 'GET',
@@ -7,5 +8,17 @@ const root = {
     handler: status
 }
 
+const login = {
+    method: 'POST',
+    path: '/login',
+    handler: authcontroller.login
+}
 
-module.exports = [ root ]
+const validate = {
+    method: 'GET',
+    path: '/login/verify',
+    handler: authcontroller.validate
+}
+
+
+module.exports = [ root, login, validate ]

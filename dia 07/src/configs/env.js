@@ -7,7 +7,7 @@ dotenv.config({
 
 module.exports = {
     env: process.env.NODE_ENV,
-    secret: process.env.APP_SECRET, //TOKEN JWT
+    secret: process.env.JWT_SECRET, //TOKEN JWT
     database : {
         host: process.env.DB_HOST,
         user: process.env.DB_USER,
